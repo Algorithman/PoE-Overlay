@@ -9,6 +9,7 @@ interface Row {
   count: number;
   seller: string;
   age: string;
+  ilvl: number;
 }
 
 interface SelectEvent {
@@ -40,7 +41,7 @@ export class EvaluateSearchTableComponent {
         const next: Row = {
           amount: Math.round(item.targetAmount * 100) / 100, count: 1,
           originalAmount: item.originalAmount, originalCurrency: item.original,
-          seller: item.seller, age: item.age,
+          seller: item.seller, age: item.age, ilvl: item.ilvl,
         };
         const key = keyFn(next);
         if (map[key]) {

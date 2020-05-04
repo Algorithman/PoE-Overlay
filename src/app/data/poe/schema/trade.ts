@@ -269,7 +269,13 @@ export interface TradeFetchResultListing {
     account: TradeFetchResultAccount;
 }
 
+export interface TradeFetchResultItem {
+    ilvl : number;
+}
+
 export interface TradeFetchResult {
     id: string;
     listing: TradeFetchResultListing;
+    item: TradeFetchResultItem;
 }
+

@@ -19,6 +19,7 @@ export interface ItemSearchListing {
     age: string;
     currency: Currency;
     amount: number;
+    ilvl: number;
 }
 
 export interface ItemSearchResult {
@@ -178,6 +179,7 @@ export class ItemSearchService {
         }
 
         const currencyId = price.currency;
+        const ilvl = result.item.ilvl;
         return this.currencyService.searchById(currencyId).pipe(
             map(currency => {
                 if (!currency) {
@@ -188,6 +190,7 @@ export class ItemSearchService {
                     seller, indexed,
                     currency, amount,
                     age: indexed.fromNow(),
+                    ilvl,
                 };
             })
         );
